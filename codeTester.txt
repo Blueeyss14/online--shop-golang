@@ -1,0 +1,189 @@
+		// if pilihOpsi == 1 {
+		// 	for barang != 4 {
+		// 		fmt.Println("Silahkan cari barang yang anda suka")
+		// 		fmt.Println("1. Baju A dengan Harga 300000")
+		// 		fmt.Println("2. Baju B dengan Harga 400000")
+		// 		fmt.Println("3. Baju C dengan Harga 500000")
+		// 		fmt.Println("4. Bayar")
+
+		// 		fmt.Println()
+		// 		fmt.Print("> Respon: ")
+		// 		fmt.Scan(&barang)
+
+		// 		if barang == 1 {
+		// 			harga = 300000
+		// 			fmt.Println("===============================================================================")
+		// 			fmt.Println("Anda memilih baju A")
+		// 			fmt.Println("===============================================================================")
+		// 		} else if barang == 2 {
+		// 			harga = 400000
+		// 			fmt.Println("===============================================================================")
+		// 			fmt.Println("Anda memilih baju B")
+		// 			fmt.Println("===============================================================================")
+		// 		} else if barang == 3 {
+		// 			harga = 500000
+		// 			fmt.Println("===============================================================================")
+		// 			fmt.Println("Anda memilih baju C")
+		// 			fmt.Println("===============================================================================")
+		// 		} else if barang == 4 {
+		// 			fmt.Println("===============================================================================")
+		// 			fmt.Println("Terimakasih Sudah Berbelanja di Toko ini")
+		// 			fmt.Println("===============================================================================")
+
+		// 		} else {
+		// 			fmt.Println("===============================================================================")
+		// 			fmt.Println("Maaf, produk ini tidak tersedia")
+		// 		}
+
+		// 		if barang <= 3 {
+		// 			Barang[n].nBarang = barang
+		// 			Barang[n].hargaBarang = harga
+		// 			total += harga
+		// 			n++
+		// 		}
+		// 	}
+
+		// 	if n > 0 {
+		// 		hari := time.Now().Weekday()
+		// 		fmt.Print(hari)
+		// 		fmt.Print(", ")
+
+		// 		waktu := time.Now().Format(time.Kitchen)
+		// 		fmt.Println(waktu)
+
+		// 		fmt.Println("Barang yang anda beli adalah:")
+		// 		for i := 0; i < n; i++ {
+		// 			if Barang[i].nBarang == 1 {
+		// 				fmt.Println("> Barang A dengan harga", Barang[i].hargaBarang)
+		// 			} else if Barang[i].nBarang == 2 {
+		// 				fmt.Println("> Barang B dengan harga", Barang[i].hargaBarang)
+		// 			} else if Barang[i].nBarang == 3 {
+		// 				fmt.Println("> Barang C dengan harga", Barang[i].hargaBarang)
+		// 			}
+		// 		}
+		// 		fmt.Println("===============================================================================")
+		// 		fmt.Println("Total belanja anda adalah:", total)
+		// 		fmt.Println("===============================================================================")
+
+		// 	} else {
+		// 		fmt.Println("===============================================================================")
+		// 		fmt.Println("Anda tidak membeli barang apapun.")
+		// 		fmt.Println("===============================================================================")
+		// 	}
+
+		// }
+
+
+
+----------------------------------------------------------
+
+package main
+
+import "fmt"
+
+const NMax = 100
+
+type dataBarang1 struct {
+	nBarang1     int
+	hargaBarang1 int
+}
+
+type TabBarang1 [NMAX]dataBarang1
+
+func main() {
+	var test TabBarang1
+	var n int
+
+	inputPenjual1(&test, n)
+}
+
+func inputPenjual1(Barang *TabBarang1, n int) {
+	//var harga int
+	// var harga string
+
+	for i := 0; i < n; i++ {
+		fmt.Print("Nama Barang: ")
+		fmt.Scan(&Barang[i].nBarang1)
+		fmt.Print("Harga: ")
+		fmt.Scan(&Barang[i].hargaBarang1)
+
+	}
+
+}
+
+
+		-------------------------------------------------
+
+Sequential Search
+
+package main
+
+import "fmt"
+
+const NMAX int = 10
+
+type wilayah struct {
+	nama, tempat string
+}
+
+type TabWilayah = [NMAX]wilayah
+
+func main() {
+	var tempat = TabWilayah{
+		{nama: "Anies", tempat: "Jakarta"},
+		{nama: "Prabowo", tempat: "Bandung"},
+		{nama: "Ganjar", tempat: "Cianjur"},
+		{nama: "Jarwo", tempat: "Jakarta"},
+		{nama: "Jarwo", tempat: "Bandung"},
+	}
+	var jumlahTempat int = len(tempat)
+
+	var x string
+	fmt.Scan(&x)
+
+	cariWilayah(tempat, jumlahTempat, x)
+}
+
+func cariWilayah(tempat TabWilayah, n int, x string) {
+	// Buat variabel untuk menyimpan jumlah hasil pencarian
+	nomor := 0
+
+	// Cetak hasil pencarian dengan indeks yang berurutan
+	for i := 0; i < n; i++ {
+		if tempat[i].tempat == x {
+			nomor++
+			fmt.Println(nomor, tempat[i].nama, tempat[i].tempat)
+		}
+	}
+}
+----------------------------------------
+
+
+
+
+
+
+perbaikan
+
+
+var barang2 = TabBarang{
+		{inputBarang: "A ", hargaBarang: 120000, wilayah: "Jakarta"},
+		{inputBarang: "B ", hargaBarang: 100000, wilayah: "Bandung"},
+		{inputBarang: "C ", hargaBarang: 150000, wilayah: "Bogor"},
+		{inputBarang: "D ", hargaBarang: 170000, wilayah: "Jakarta"},
+		{inputBarang: "E ", hargaBarang: 130000, wilayah: "Jakarta"},
+		{inputBarang: "F ", hargaBarang: 200000, wilayah: "Bandung"},
+		{inputBarang: "G ", hargaBarang: 300000, wilayah: "Bogor"},
+		{inputBarang: "H ", hargaBarang: 130000, wilayah: "Bandung"},
+		{inputBarang: "I ", hargaBarang: 2500000, wilayah: "Medan"},
+		{inputBarang: "J ", hargaBarang: 200000, wilayah: "Medan"},
+	}
+
+	var jumlahData int = len(barang2)
+
+
+	fmt.Println("> Silahkan Cari Barang Sesuai Opsi: ")
+		fmt.Println("1. Cari berdasarkan wilayah")
+		fmt.Println("2. Barang dari harga yang termurah")
+		fmt.Println("3. Barang dari harga yang termahal")
+		fmt.Println("0. Submit")
